@@ -1,5 +1,5 @@
 package motorph.model;
-public abstract class Person {
+public abstract class Person implements IPerson{
 
     private String firstName;
     private String lastName;
@@ -28,4 +28,5 @@ public abstract class Person {
 
     @Override
     public String toString() { return getFullName(); }
+
 }

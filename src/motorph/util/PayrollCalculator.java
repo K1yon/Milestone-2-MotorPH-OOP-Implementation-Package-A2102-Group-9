@@ -14,6 +14,16 @@ public class PayrollCalculator {
             regularHrs  += wh.getRegularHours();
             overtimeHrs += wh.getOvertimeHours();
         }
+
+        if (attendance.isEmpty()) {
+            return new Payslip(
+                emp.getEmployeeNumber(), emp.getFullName(), monthName,
+                0, 0, 0, 0,
+                0, 0, 0,
+                0, 0, 0, 0
+            );
+        }
+
         double regularPay  = regularHrs  * emp.getHourlyRate();
         double overtimePay = overtimeHrs * emp.getHourlyRate() * 1.25;
         double grossPay    = regularPay + overtimePay + emp.getTotalAllowances();

@@ -65,7 +65,6 @@ public class HRDashboardFrame extends BaseAppFrame {
         }
     }
 
-    /** Creates a JTextField with optional character limit and tooltip. */
     private JTextField limitedField(String value, int maxLen, String tooltip) {
         JTextField f = new JTextField(value != null ? value : "");
         f.setFont(AppTheme.FONT_BODY);

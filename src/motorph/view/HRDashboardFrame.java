@@ -400,8 +400,12 @@ public class HRDashboardFrame extends BaseAppFrame {
 
         closeBtn.addActionListener(e -> dialog.dispose());
 
-        JPanel header = AppTheme.pageHeader(emp.getFullName(),
-            "#" + emp.getEmployeeNumber() + "  \u00B7  " + emp.getPosition());
+        String displayName = emp.getFullName().length() > 30
+    ? emp.getFullName().substring(0, 30) + "..."
+    : emp.getFullName();
+JPanel header = AppTheme.pageHeader(displayName,
+    "#" + emp.getEmployeeNumber() + "  \u00B7  " + emp.getPosition());
+        
         JPanel actions = new JPanel(new FlowLayout(FlowLayout.RIGHT, 6, 0));
         actions.setBackground(AppTheme.CARD_WHITE);
         actions.add(AppTheme.boldLabel("Month:"));
